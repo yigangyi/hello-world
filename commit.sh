@@ -1,4 +1,5 @@
 #!/bin/bash
+cd /home/wuyun/Desktop/yi/dirtest/hello-world/
 for((;;))
 do
   myip=$(cat myip);
