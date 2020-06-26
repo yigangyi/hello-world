@@ -3,9 +3,10 @@ cd /home/wuyun/Desktop/yi/dirtest/hello-world/
 for((;;))
 do
   myip=$(cat myip);
-  realip=$(curl -s icanhazip.com);
+  realip=$(curl --connect-timeout 10 --url icanhazip.com);
   if [ "$myip" = "$realip" ];then
     echo "=="
+    sleep 30m
   elif [ ! -z $realip ];then
     echo $realip >myip;
     git commit -m 2020 mydns;
@@ -13,8 +14,8 @@ do
     git commit -m 2020 commit.sh;
     git push;
     cat myip;
+    sleep 12h
   else
-    break;
+    sleep 1m
   fi
-  sleep 2h
 done
