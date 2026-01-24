@@ -12,7 +12,7 @@ do
 		if [ -z $realip ];then
 			realip=$(curl www.net.cn/static/customercare/yourip.asp | grep -Eo '([0-9]{1,3}[\.]){3}[0-9]{1,3}');
 		fi
-		if [ "$myip" = "$realip" ];then
+		if [[ "$myip" == "$realip" ]];then
 			echo "=="
 			sleep 30m
 		elif [ ! -z $realip ];then
